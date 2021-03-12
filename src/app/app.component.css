@@ -1,0 +1,13 @@
+table {
+  width: 100%;
+}
+
+mat-menu {
+  display: flex;
+  flex-direction: row;
+}
+
+.menu-radios {
+  display: flex;
+  flex-direction: column;
+}

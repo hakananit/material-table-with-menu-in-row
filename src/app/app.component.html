@@ -1,0 +1,54 @@
+<mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+  <ng-container matColumnDef="magaza">
+    <mat-header-cell *matHeaderCellDef>Magaza</mat-header-cell>
+    <mat-cell *matCellDef="let element">{{element.magaza}}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="bolge">
+    <mat-header-cell *matHeaderCellDef>Bolge</mat-header-cell>
+    <mat-cell *matCellDef="let element">{{element.bolge}}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="isyeri">
+    <mat-header-cell *matHeaderCellDef>Türü</mat-header-cell>
+    <mat-cell *matCellDef="let element">{{element.isyeri}}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="segment">
+    <mat-header-cell *matHeaderCellDef>Segment</mat-header-cell>
+    <mat-cell *matCellDef="let element">{{element.segment}}</mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="grup">
+    <mat-header-cell *matHeaderCellDef>Grup</mat-header-cell>
+    <mat-cell *matCellDef="let element">{{element.grup}}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="firma">
+    <mat-header-cell *matHeaderCellDef>Firma</mat-header-cell>
+    <mat-cell *matCellDef="let element">
+      seçin
+      <button
+        mat-icon-button
+        [matMenuTriggerFor]="menu"
+        aria-label="Example icon-button with a menu"
+      >
+        <mat-icon>mode</mat-icon>
+      </button>
+      <mat-menu #menu="matMenu">
+        <div class="menu-radios">
+          <mat-radio-button
+            class="mat-menu-item"
+            (click)="$event.stopPropagation()"
+            >00000 - seçenek 1</mat-radio-button
+          >
+          <mat-radio-button class="mat-menu-item"
+            >00000 - seçenek 2 - test test test test test</mat-radio-button
+          >
+        </div>
+      </mat-menu>
+    </mat-cell>
+  </ng-container>
+
+  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+</mat-table>
